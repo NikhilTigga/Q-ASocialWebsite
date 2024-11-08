@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/profile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+    .verticalNav {
+        border-radius: 13px;
+        margin: 40px 13px 3px 31px;
+        background-color: rgba(255, 255, 255, 0.947);
+        /* AliceBlue with 50% transparency */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Vertically aligns items to the center within the container */
+        justify-content: space-between;
+        /* Optional: adjusts spacing between items */
+    }
+
+    .posts {
+        width: 96%;
+    }
+
+    .verticalNav a {
+        margin: 15px 0px 6px 120px;
+        padding: 1px;
+        color: black;
+        /* Initial color */
+        transition: color 0.3s ease, transform 0.3s ease;
+        /* Smooth transition */
+    }
+
+    .verticalNav a:hover {
+        color: #FF69B4;
+        /* Change to a pink color on hover */
+        transform: scale(1.1);
+        /* Slightly enlarge the link on hover */
+    }
+
+    /* Add a black background color to the top navigation bar */
+    .topnav {
+        overflow: hidden;
+        background-color: #e9e9e9;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #e9e9e9;
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        background-color: #2196F3;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        margin: 5px 8px 5px 10px;
+        border-radius: 27px;
+        width: 7em;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        /* Smooth transition */
+        font-family: "Playwrite GB S", cursive;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .topnav a:hover {
+        transform: translate3d(5px, 0, 0) scale3d(1.05, 1.05, 1) rotateZ(3deg);
+    }
+
+
+
+
+    .topnav a.active {
+        background-color: #2196F3;
+        color: white;
+        margin: 5px 8px 5px 10px;
+        border-radius: 27px;
+        width: 7em;
+        font-family: "Playwrite GB S", cursive;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    .topnav .search-container {
+        float: right;
+    }
+
+    .topnav input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        border-radius: 15px
+    }
+
+    .topnav .search-container button {
+        float: right;
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #2196F3;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .topnav .search-container button:hover {
+        background: #ccc;
+    }
+
+    @media screen and (max-width: 600px) {
+        .topnav .search-container {
+            float: none;
+        }
+
+        .topnav a,
+        .topnav input[type=text],
+        .topnav .search-container button {
+            float: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin: 0;
+            padding: 14px;
+        }
+
+        .topnav input[type=text] {
+            border: 1px solid #ccc;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="topnav">
+            <a class="active" href="/"><i class="fa fa-fw fa-home"></i>Home</a>
+            <a  href="/gotoprofile"><i class="fas fa-warehouse"></i> Profile</a>
+            
+            <a href="#contact"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+            <div class="search-container">
+                <form id="searchForm">
+                    <input type="text" placeholder="Search.." name="search" required>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="content mainContent">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="verticalNav">
+                    <a href="/category/Trending"> <img src="../images/trnding.jpg" width="15%" alt="Trending"
+                            style="border-radius: 50%; border: 2px solid rgb(227, 179, 20);">&nbsp; Trending</a>
+                    <a href="/category/Food"> <img src="../images/food.jpg" width="15%" alt="Food"
+                            style="border-radius: 50%; border: 2px solid rgb(227, 179, 20);">&nbsp;Food</a>
+                    <a href="/category/Technology"> <img src="../images/technology.png" width="15%" alt="Technology"
+                            style="border-radius: 50%; border: 2px solid rgb(227, 179, 20);">&nbsp;Technology</a>
+                    <a href="/category/Health"> <img src="../images/health.jpg" width="15%" alt="Health"
+                            style="border-radius: 50%; border: 2px solid rgb(227, 179, 20);">&nbsp;Health</a>
+                    <a href="/category/Movies"> <img src="../images/movies.jpg" width="15%" alt="Movies"
+                            style="border-radius: 50%; border: 2px solid rgb(227, 179, 20);">&nbsp;Movies</a>
+
+
+                </div>
+
+            </div>
+            <div class="col-md-8">
+
+                <div class="allposts">
+                    <% posts.forEach(posts=> { %>
+                        <div class="posts">
+                            <div class="post-header">
+                                <div class="profile-section">
+                                    <img src="<%= posts.profile_image ? 'data:image/png;base64,' + posts.profile_image.toString('base64') : '../images/default-profile.jpg' %>"
+                                        alt="User profile" class="profile-image">
+                                    <div class="user-info">
+                                        <h4>
+                                            <%= posts.name %>
+                                        </h4>
+                                        <p class="post-date">
+                                            <%= new Date(posts.post_date).toLocaleDateString() %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="title">
+                                <h1>
+                                    <%= posts.title %>
+                                </h1>
+                            </div>
+                            <div class="description">
+                                <p>
+                                    <%= posts.description %>
+                                </p>
+                            </div>
+
+                            <div class="icons">
+                                <div class="icon-item likeBtn" data-post-id="<%= posts.post_id %>">
+                                    <i class="fas fa-thumbs-up"></i> <span class="likeCount">
+                                        <%= posts.total_likes %>
+                                    </span>
+                                </div>
+                                <div class="icon-item dislikeBtn" data-post-id="<%= posts.post_id %>">
+                                    <i class="fas fa-thumbs-down"></i> <span class="dislikeCount">
+                                        <%= posts.total_dislikes %>
+                                    </span>
+                                </div>
+                                <div class="icon-item commentBtn" data-post-id="<%= posts.post_id %>">
+                                    <i class="fas fa-comment"></i> <span class="commentCount">
+                                        <%= posts.total_comments %>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Modal for the Answer Form (initially hidden) -->
+                            <div class="modal" id="answerModal-<%= posts.post_id %>">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <form action="/submitAnswer/<%= posts.post_id %>" method="POST">
+                                        <input type="hidden" name="post_id" value="<%= posts.post_id %>">
+                                        <div class="form-group">
+                                            <label for="answerTitle">Title:</label>
+                                            <input type="text" id="answerTitle" name="answerTitle"
+                                                placeholder="Enter your answer title" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="answerDescription">Description:</label>
+                                            <textarea id="answerDescription" name="answerDescription"
+                                                placeholder="Enter your answer description" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit">Submit Answer</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="dropDownMenu">
+
+                                <div class="readans">
+                                    <button type="submit">
+                                        <h3>Read Answers <i class="fas fa-caret-square-down"></i></h3>
+                                    </button>
+                                </div>
+
+                                <!-- Display answers if available -->
+                                <div class="answer" style="display: none;">
+                                    <% if(posts.answers && posts.answers.length> 0) { %>
+                                        <% posts.answers.forEach(answer=> { %>
+                                            <div class="answer-item">
+                                                <div class="answer-header">
+                                                    <img src="<%='data:image/png;base64,' + answer.profile_image.toString('base64')  %>"
+                                                        alt="Profile Picture" class="profile-pic">
+                                                    <div class="user-info">
+                                                        <h4 class="user-name">
+                                                            <%= answer.name %>
+                                                        </h4>
+                                                        <p class="answer-date">
+                                                            <%= new Date(answer.answer_date).toLocaleDateString() %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="title">
+                                                    <h1>
+                                                        <%= answer.answer_title %>
+                                                    </h1>
+                                                </div>
+                                                <div class="description">
+                                                    <p>
+                                                        <%= answer.answer_description %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <% }) %>
+
+                                                <% } %>
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                        <% }) %>
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+<footer>
+    <%- include('footer') %>
+</footer>
+<script>
+    // JavaScript to handle form submission with URL parameter
+    document.getElementById("searchForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const searchInput = document.querySelector('input[name="search"]').value.trim();
+
+        if (searchInput) {
+            // Redirect to the URL with search term as categoryName
+            window.location.href = `/category/${encodeURIComponent(searchInput)}`;
+        }
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery Library -->
+<script src="../script/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
+
+</html>

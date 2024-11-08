@@ -1,0 +1,180 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+<style>
+    footer {
+        background-color: #222;
+        color: #fff;
+        padding: 30px 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    footer h3 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        color:rgb(51, 197, 234);
+        font-family: "Oswald", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 35px;
+    }
+
+    footer a {
+        color: #ffdd57;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        color: #fff;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+        padding: 10px;
+        justify-content: left;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-column li {
+        margin: 22px 0;
+    }
+
+    .map-container {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .map-container {
+        color: rgba(231, 86, 38, 0.911);
+        font-family: "Oswald", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 35px;
+
+    }
+
+    .map-container iframe {
+        width: 100%;
+        max-width: 600px;
+        height: 350px;
+        border: 0;
+    }
+    
+
+    .copyright {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.9em;
+        color: #aaa;
+    }
+    .copyright span{
+        color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .map-container iframe {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        footer {
+            padding: 20px 10px;
+        }
+
+        footer h3 {
+            font-size: 1em;
+        }
+
+        .footer-column {
+            padding: 5px;
+        }
+
+        .map-container iframe {
+            height: 250px;
+        }
+    }
+</style>
+
+<footer>
+    <div class="footer-container">
+        <!-- Column 1: Follow Me -->
+        <div class="footer-column">
+            <h3>Follow Me</h3>
+            <ul>
+                <li><a href="https://github.com/your-github" target="_blank"><img src="../images/github.png"
+                            alt="github" width="10%"> Github</a></li>
+                <li><a href="https://linkedin.com/in/your-linkedin" target="_blank"><img src="../images/linkedin.png"
+                            alt="linkedin" width="10%"> LinkedIn</a></li>
+                <li><a href="https://instagram.com/your-instagram" target="_blank"><img src="../images/instagram.png"
+                            alt="instagram" width="10%"> Instagram</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Contact -->
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>Mobile No: +91 9304668921</p>
+            <p>Email: <a href="mailto:nikhiltigga265@gmail.com">nikhiltigga265@gmail.com</a></p>
+        </div>
+
+        <!-- Column 3: Address -->
+        <div class="footer-column">
+            <h3>Address</h3>
+            <p>Bara Ghaghara Doranda, Ranchi, Jharkhand</p>
+        </div>
+
+        <!-- Column 4: Developed By -->
+        <div class="footer-column">
+            <h3>Developed By</h3>
+            <p>Nikhil Tigga</p>
+            <p>Purpose: Small Project</p>
+            <p>Mentor: Dr. Saikat Chakraborty</p>
+            <p>Developed at BIT Mesra, Ranchi, Jharkhand</p>
+        </div>
+    </div>
+
+    <!-- Map Row -->
+    <div class="map-container">
+
+        <h1>Map</h1>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.3878789945715!2d85.44008771498154!3d23.41416618475739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e1a028a7505d%3A0x1a3eb11c59f10ac3!2sBirla%20Institute%20of%20Technology%20Mesra!5e0!3m2!1sen!2sin!4v1631814318455!5m2!1sen!2sin"
+            allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    
+
+    <!-- Copyright -->
+    <div class="copyright">
+        &copy; <span id="currentYear"></span> Nikhil Tigga. All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+    // Update the year dynamically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>

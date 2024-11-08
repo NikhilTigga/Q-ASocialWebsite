@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/profile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Landing Posts</title>
+
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /* Navbar links */
+.navbar a {
+    background-color: red;
+    border-radius: 30px;
+
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: rgb(222, 223, 147);
+    text-decoration: none;
+    font-size: 25px;
+
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+
+
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+}
+.posts {
+    justify-content: center;
+    border-radius: 10px;
+    width: 86%;
+    background-color: white;
+    padding: 20px;
+    margin: 12px 2px 1px 0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.verticalNav{
+    border-radius: 13px;
+    margin: 40px 13px 3px 31px;
+    background-color: rgba(255, 255, 255, 0.947); /* AliceBlue with 50% transparency */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Vertically aligns items to the center within the container */
+    justify-content: space-between; /* Optional: adjusts spacing between items */
+}
+.verticalNav a {
+    margin: 15px 0px 6px 120px;
+    padding: 1px;
+    color: black; /* Initial color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.verticalNav a:hover {
+    color: #FF69B4; /* Change to a pink color on hover */
+    transform: scale(1.1); /* Slightly enlarge the link on hover */
+}
+
+
+    
+
+
+
+
+    /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+    @media screen and (max-width: 500px) {
+        .navbar a {
+            float: none;
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <header>
+
+
+        <!-- Background Video -->
+        <div class="background">
+            <video class="video-background" autoplay muted loop>
+                <source src="/videos/background.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="navbar">
+                <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+                <a  href="/gotoprofile"><i class="fas fa-warehouse"></i> Profile</a>
+                <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+                <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+
+                <a href="#"><i class="fa fa-fw fa-user"></i> <button id="loginBtn">Login</button></a>
+
+            </div>
+
+        </div>
+
+        <!-- Pop-up Form Container -->
+        <div id="popupForm" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="form-container">
+
+                    <!-- Login Form -->
+                    <form id="loginForm" class="form" action="/login" method="POST">
+                        <h2>Login</h2>
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email" required>
+
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password"
+                            required>
+
+                        <button type="submit">Login</button>
+                        <p>Don't have an account? <span id="showRegisterForm">Register here</span></p>
+                    </form>
+
+                    <!-- Registration Form -->
+                    <form id="registerForm" class="form" action="/register" method="POST" style="display:none;">
+                        <h2>Register</h2>
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" name="registerEmail" placeholder="Enter your email"
+                            required>
+
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" name="registerPassword"
+                            placeholder="Enter your password" required>
+
+                        <label for="registerConfirmPassword">Confirm Password</label>
+                        <input type="password" id="registerConfirmPassword" name="registerConfirmPassword"
+                            placeholder="Confirm your password" required>
+
+                        <button type="submit">Register</button>
+                        <p>Already have an account? <span id="showLoginForm">Login here</span></p>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+</header>
+
+    </header>
+    <div class="content mainContent">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="verticalNav">
+                    <a href="/category/Trending"> <img src="../images/trnding.jpg" width="15%" alt="Trending" style="border-radius: 50%; border: 2px solid rgb(227, 179, 20);">&nbsp; Trending</a>
+                    <a href="/category/Food"> <img src="../images/food.jpg" width="15%" alt="Food" style="border-radius: 50%; border: 2px solid rgb(227, 179, 20);">&nbsp;Food</a> 
+                    <a href="/category/Technology"> <img src="../images/technology.png" width="15%" alt="Technology" style="border-radius: 50%; border: 2px solid rgb(227, 179, 20);">&nbsp;Technology</a>
+                    <a href="/category/Health"> <img src="../images/health.jpg" width="15%" alt="Health" style="border-radius: 50%; border: 2px solid rgb(227, 179, 20);">&nbsp;Health</a>
+                    <a href="/category/Movies"> <img src="../images/movies.jpg" width="15%" alt="Movies" style="border-radius: 50%; border: 2px solid rgb(227, 179, 20);">&nbsp;Movies</a>
+                     
+                     
+                </div>
+
+            </div>
+            <div class="col-md-8">
+                
+                    <div class="allposts">
+                        <% posts.forEach(posts=> { %>
+                            <div class="posts">
+                                <div class="post-header">
+                                    <div class="profile-section">
+                                        <img src="<%= posts.profile_image ? 'data:image/png;base64,' + posts.profile_image.toString('base64') : '../images/default-profile.jpg' %>"
+                                            alt="User profile" class="profile-image">
+                                        <div class="user-info">
+                                            <h4>
+                                                <%= posts.name %>
+                                            </h4>
+                                            <p class="post-date">
+                                                <%= new Date(posts.post_date).toLocaleDateString() %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="title">
+                                    <h1>
+                                        <%= posts.title %>
+                                    </h1>
+                                </div>
+                                <div class="description">
+                                    <p>
+                                        <%= posts.description %>
+                                    </p>
+                                </div>
+            
+                                <div class="icons">
+                                    <div class="icon-item likeBtn" data-post-id="<%= posts.post_id %>">
+                                        <i class="fas fa-thumbs-up"></i> <span class="likeCount">
+                                            <%= posts.total_likes %>
+                                        </span>
+                                    </div>
+                                    <div class="icon-item dislikeBtn" data-post-id="<%= posts.post_id %>">
+                                        <i class="fas fa-thumbs-down"></i> <span class="dislikeCount">
+                                            <%= posts.total_dislikes %>
+                                        </span>
+                                    </div>
+                                    <div class="icon-item commentBtn" data-post-id="<%= posts.post_id %>">
+                                        <i class="fas fa-comment"></i> <span class="commentCount"> <%= posts.total_comments %></span>
+                                    </div>
+                                </div>
+            
+                                <!-- Modal for the Answer Form (initially hidden) -->
+                                <div class="modal" id="answerModal-<%= posts.post_id %>">
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <form action="/submitAnswer/<%= posts.post_id %>" method="POST">
+                                            <input type="hidden" name="post_id" value="<%= posts.post_id %>">
+                                            <div class="form-group">
+                                                <label for="answerTitle">Title:</label>
+                                                <input type="text" id="answerTitle" name="answerTitle"
+                                                    placeholder="Enter your answer title" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="answerDescription">Description:</label>
+                                                <textarea id="answerDescription" name="answerDescription"
+                                                    placeholder="Enter your answer description" required></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit">Submit Answer</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="dropDownMenu">
+            
+                                    <div class="readans">
+                                        <button type="submit">
+                                            <h3>Read Answers <i class="fas fa-caret-square-down"></i></h3>
+                                        </button>
+                                    </div>
+            
+                                    <!-- Display answers if available -->
+                                    <div class="answer" style="display: none;">
+                                        <% if(posts.answers && posts.answers.length> 0) { %>
+                                            <% posts.answers.forEach(answer=> { %>
+                                                <div class="answer-item">
+                                                    <div class="answer-header">
+                                                        <img src="<%='data:image/png;base64,' + answer.profile_image.toString('base64')  %>"
+                                                            alt="Profile Picture" class="profile-pic">
+                                                        <div class="user-info">
+                                                            <h4 class="user-name">
+                                                                <%= answer.name %>
+                                                            </h4>
+                                                            <p class="answer-date">
+                                                                <%= new Date(answer.answer_date).toLocaleDateString() %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="title">
+                                                        <h1>
+                                                            <%= answer.answer_title %>
+                                                        </h1>
+                                                    </div>
+                                                    <div class="description">
+                                                        <p>
+                                                            <%= answer.answer_description %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <% }) %>
+            
+                                                    <% } %>
+            
+                                    </div>
+                                </div>
+            
+            
+            
+            
+            
+            
+            
+                            </div>
+                            <% }) %>
+            
+            
+            
+                    </div>
+                
+            
+
+            </div>
+        </div>
+        
+    </div>
+   
+
+</body>
+<footer>
+    <%- include('footer') %>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery Library -->
+<script src="../script/script.js"></script>
+<script src="../script/login.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
+<script>
+    // Like button logic
+    document.querySelectorAll('.likeBtn').forEach(button => {
+        button.addEventListener('click', async function () {
+            const postId = this.getAttribute('data-post-id'); // Get the post ID from data attribute
+            try {
+                const response = await fetch(`/like-post/${postId}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await response.json();
+                if (data.total_likes !== undefined && data.total_dislikes !== undefined) {
+                    this.querySelector('.likeCount').innerText = data.total_likes; // Update like count for this post
+                    this.parentElement.querySelector('.dislikeCount').innerText = data.total_dislikes; // Update dislike count for this post
+                }
+            } catch (err) {
+                console.error('Error liking post:', err);
+            }
+        });
+    });
+
+    // Dislike button logic
+    document.querySelectorAll('.dislikeBtn').forEach(button => {
+        button.addEventListener('click', async function () {
+            const postId = this.getAttribute('data-post-id'); // Get the post ID from data attribute
+            try {
+                const response = await fetch(`/dislike-post/${postId}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await response.json();
+                if (data.total_likes !== undefined && data.total_dislikes !== undefined) {
+                    this.querySelector('.dislikeCount').innerText = data.total_dislikes; // Update dislike count for this post
+                    this.parentElement.querySelector('.likeCount').innerText = data.total_likes; // Update like count for this post
+                }
+            } catch (err) {
+                console.error('Error disliking post:', err);
+            }
+        });
+    });
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select all comment buttons
+        const commentBtns = document.querySelectorAll('.commentBtn');
+
+        // Loop through each comment button and add a click event listener
+        commentBtns.forEach(button => {
+            button.addEventListener('click', function () {
+                const postId = this.getAttribute('data-post-id'); // Get the post ID
+                const modal = document.getElementById(`answerModal-${postId}`); // Get the modal for the post
+
+                // Display the modal
+                modal.style.display = "block";
+
+                // Get the close button
+                const closeBtn = modal.querySelector('.close');
+
+                // Close the modal when the close button is clicked
+                closeBtn.onclick = function () {
+                    modal.style.display = "none";
+                };
+
+                // Close the modal if the user clicks outside the modal content
+                window.onclick = function (event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                };
+            });
+        });
+    });
+</script>
+
+
+
+</html>

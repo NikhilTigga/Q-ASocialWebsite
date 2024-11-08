@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="../style/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+
+        padding: 0;
+    }
+
+    /* Navbar links */
+    .navbar a {
+
+        border-radius: 30px;
+
+        float: left;
+        text-align: center;
+        padding: 12px;
+        color: rgb(222, 223, 147);
+        text-decoration: none;
+        font-size: 25px;
+        margin-right: 80px;
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+
+
+        font-family: "Playwrite GB S", cursive;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+
+    }
+
+
+    .profileimg {
+        background-image: url("../images/background.jpg");
+        height: 50vh;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+    }
+    .profileimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    display: block; /* Removes any extra space around the image */
+}
+
+    .profile {
+        max-height: 40em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* Stack image and name vertically */
+        align-items: center;
+        /* Center the content */
+        justify-content: center;
+        /* Center the content vertically */
+        margin-top: 10px;
+
+    }
+
+    .profileInfo {
+        background-color: #8af0f5af;
+        padding: 0 0px 0px 38px
+    }
+
+    .userinfo {
+        display: flex;
+        justify-content: center;
+        width: fit-content;
+        /* Ensures the element takes the width of its content */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .userinfo button {
+
+        width: 182px;
+        height: 48px;
+        border-radius: 23px;
+        background-color: #ed527bbd;
+        font-family: "Playwrite GB S", cursive;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 23px;
+    }
+
+
+    .profile img {
+        border-radius: 50%;
+        /* Circular image */
+        width: 100px;
+        /* Set a fixed width */
+        height: 100px;
+        /* Set a fixed height to maintain aspect ratio */
+        object-fit: cover;
+        /* Ensure the image fits within the circle */
+        border: 2px solid #c70cbb
+    }
+
+    .profile h2 {
+        margin-top: 10px;
+        /* Add some space between image and name */
+        font-size: 1.5em;
+        /* Set a larger font size for the name */
+    }
+
+    .readans {
+        display: flex;
+        background-color: #04AA6D;
+        justify-content: center;
+    }
+
+    .readans button {
+        background-color: transparent;
+        /* Fully transparent background */
+        border: none;
+        /* No border */
+        color: #000;
+        /* Button text color */
+        padding: 1px 20px;
+        /* Button padding */
+        cursor: pointer;
+        /* Pointer cursor to indicate interactivity */
+        font-size: 16px;
+        /* Adjust font size if needed */
+        transition: color 0.3s ease;
+        /* Smooth transition on hover */
+    }
+
+    .readans button:hover {
+        color: #007bff;
+        /* Change text color on hover */
+    }
+
+
+    .timeline {
+        background-color: #b6f0f5dd;
+        /* Light background for the timeline section */
+        padding: 20px;
+        /* Padding around the timeline */
+        max-height: 88vh;
+        overflow-y: scroll;
+
+    }
+
+    .posts {
+        background-color: rgba(255, 255, 255, 0.8);
+        /* Semi-transparent white background */
+        padding: 20px;
+        /* Padding inside each post */
+        margin-bottom: 20px;
+        /* Space between posts */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow for depth */
+        width: 90%;
+
+    }
+
+    .title h1 {
+        font-size: 1.5em;
+        /* Larger font size for the title */
+        margin-bottom: 10px;
+        /* Space below the title */
+        color: #333;
+        /* Darker text color */
+    }
+
+    .description {
+        font-size: 1em;
+        /* Standard font size for the description */
+        color: #666;
+        /* Slightly lighter color for text */
+        margin-bottom: 20px;
+        /* Space below the description */
+    }
+
+
+
+
+
+
+
+    /* Style the navigation bar */
+    .navbar {
+        width: 100%;
+        background-color: #555;
+        overflow: auto;
+        display: block;
+    }
+
+    /* Navbar links */
+    .navbar a {
+        float: left;
+        text-align: center;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    /* Navbar links on mouse-over */
+    .navbar a:hover {
+        background-color: #000;
+    }
+
+    /* Current/active navbar link */
+    .active {
+        background-color: #04AA6D;
+    }
+
+    /* Edit info
+    /* Initially hide the form */
+    .edit-form-container {
+        display: none;
+
+        overflow: hidden;
+
+
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+    }
+
+    /* When the form is visible */
+    .edit-form-container.show {
+        display: block;
+
+        max-height: 500px;
+        /* Adjust based on the form's height */
+        margin-top: 10px;
+    }
+
+    /* Container styling */
+    .edit-form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #f9f9f994;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Heading styling */
+    .edit-form-container h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Form group styling */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: block;
+        color: #555;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .form-group input[type="file"] {
+        padding: 5px;
+    }
+
+    /* Button styling */
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #2196F3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .submit-btn:hover {
+        background-color: #1976D2;
+    }
+
+
+
+    /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+    @media screen and (max-width: 500px) {
+        .navbar a {
+            float: none;
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="profileimg">
+            <img src="<%= profile && profile.background_image ? 'data:image/png;base64,' + profile.profile_image.toString('base64') : '../images/background.jpg' %>"
+                alt="background_image" width="100%">
+
+
+        </div>
+        <div class="navbar">
+            <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+            
+            <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+            <a href="../views/submitPost.html"><i class="fas fa-mail-bulk"></i> NewPost</a>
+
+            
+        </div>
+
+    </header>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-3 profileInfo">
+                <div class="profile">
+
+                    <img src="<%= profile && profile.profile_image ? 'data:image/png;base64,' + profile.profile_image.toString('base64') : '../images/progile.jpg' %>"
+                        alt="profile" width="5%">
+
+
+                    <h2>
+                        <i class="fas fa-user"></i>
+                        <%= profile && profile.name ? profile.name : 'Name' %>
+                    </h2>
+
+                </div>
+                <div class="userinfo">
+                    <button id="editButton">Edit Info</button>
+                </div>
+
+                <div class="edit-form-container" id="editForm">
+                    <h2>Edit Profile</h2>
+                    <form action="/updateProfile" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileImage">Profile Image:</label>
+                            <input type="file" id="profileImage" name="profileImage" accept="image/*">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="backgroundImage">Background Image:</label>
+                            <input type="file" id="backgroundImage" name="backgroundImage" accept="image/*">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="submit-btn">Save</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="col-md-8 timeline">
+                <% posts.forEach(posts=> { %>
+                    <div class="posts">
+                        <div class="post-header">
+                            <div class="profile-section">
+                                <img src="<%= profile.profile_image ? 'data:image/png;base64,' + profile.profile_image.toString('base64') : '../images/default-profile.jpg' %>"
+                                    alt="User profile" class="profile-image">
+                                <div class="user-info">
+                                    <h4>
+                                        <%= profile.name %>
+                                    </h4>
+                                    <p class="post-date">
+                                        <%= new Date(posts.post_date).toLocaleDateString() %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="title">
+                            <h1>
+                                <%= posts.title %>
+                            </h1>
+                        </div>
+                        <div class="description">
+                            <p>
+                                <%= posts.description %>
+                            </p>
+                        </div>
+
+                        <div class="icons">
+                            <div class="icon-item likeBtn" data-post-id="<%= posts.post_id %>">
+                                <i class="fas fa-thumbs-up"></i> <span class="likeCount">
+                                    <%= posts.total_likes %>
+                                </span>
+                            </div>
+                            <div class="icon-item dislikeBtn" data-post-id="<%= posts.post_id %>">
+                                <i class="fas fa-thumbs-down"></i> <span class="dislikeCount">
+                                    <%= posts.total_dislikes %>
+                                </span>
+                            </div>
+                            <div class="icon-item commentBtn" data-post-id="<%= posts.post_id %>">
+                                <i class="fas fa-comment"></i> <span class="commentCount">0</span>
+                            </div>
+                        </div>
+
+                        <!-- Modal for the Answer Form (initially hidden) -->
+                        <div class="modal" id="answerModal-<%= posts.post_id %>">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <form action="/submitAnswer/<%= posts.post_id %>" method="POST">
+                                    <input type="hidden" name="post_id" value="<%= posts.post_id %>">
+                                    <div class="form-group">
+                                        <label for="answerTitle">Title:</label>
+                                        <input type="text" id="answerTitle" name="answerTitle"
+                                            placeholder="Enter your answer title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="answerDescription">Description:</label>
+                                        <textarea id="answerDescription" name="answerDescription"
+                                            placeholder="Enter your answer description" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit">Submit Answer</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="dropDownMenu">
+
+                            <div class="readans">
+                                <button type="submit">
+                                    <h3>Read Answers <i class="fas fa-caret-square-down"></i></h3>
+                                </button>
+                            </div>
+
+                            <!-- Display answers if available -->
+                            <div class="answer" style="display: none;">
+                                <% if(posts.answers && posts.answers.length> 0) { %>
+                                    <% posts.answers.forEach(answer=> { %>
+                                        <div class="answer-item">
+                                            <div class="answer-header">
+                                                <img src="<%='data:image/png;base64,' + answer.profile_image.toString('base64')  %>"
+                                                    alt="Profile Picture" class="profile-pic">
+                                                <div class="user-info">
+                                                    <h4 class="user-name">
+                                                        <%= answer.name %>
+                                                    </h4>
+                                                    <p class="answer-date">
+                                                        <%= new Date(answer.answer_date).toLocaleDateString() %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="title">
+                                                <h1>
+                                                    <%= answer.answer_title %>
+                                                </h1>
+                                            </div>
+                                            <div class="description">
+                                                <p>
+                                                    <%= answer.answer_description %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <% }) %>
+
+                                            <% } %>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+                    <% }) %>
+
+
+            </div>
+            <div class="col-md-1">
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<footer>
+    <%- include('footer') %>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery Library -->
+<script src="../script/script.js"></script>
+<script src="../script/editinfo.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+</html>

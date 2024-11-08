@@ -1,0 +1,112 @@
+
+<style>
+   .profileimg {
+        background-image: url("../images/background.jpg");
+        height: 50vh;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+    } 
+    /* Style the navigation bar */
+    .navbar {
+        width: 100%;
+        background-color: #555;
+        overflow: auto;
+    }
+
+    /* Navbar links */
+    .navbar a {
+        float: left;
+        text-align: center;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    /* Navbar links on mouse-over */
+    .navbar a:hover {
+        background-color: #000;
+    }
+
+    /* Current/active navbar link */
+    .active {
+        background-color: #04AA6D;
+    }
+
+    /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+    @media screen and (max-width: 500px) {
+        .navbar a {
+            float: none;
+            display: block;
+        }
+    }
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../style/login.css">
+
+
+
+<header>
+    <div class="profileimg">
+
+    </div>
+    <div class="navbar">
+        <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+        <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a href="#"><i class="fa fa-fw fa-user"></i> <button id="loginBtn">Login</button></a>
+
+    </div>
+    <!-- Pop-up Form Container -->
+    <div id="popupForm" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="form-container">
+
+                <!-- Login Form -->
+                <form id="loginForm" class="form" action="/login" method="POST">
+                    <h2>Login</h2>
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email" required>
+
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password"
+                        required>
+
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <span id="showRegisterForm">Register here</span></p>
+                </form>
+
+                <!-- Registration Form -->
+                <form id="registerForm" class="form" action="/register" method="POST" style="display:none;">
+                    <h2>Register</h2>
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" name="registerEmail" placeholder="Enter your email"
+                        required>
+
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" name="registerPassword"
+                        placeholder="Enter your password" required>
+
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" name="registerConfirmPassword"
+                        placeholder="Confirm your password" required>
+
+                    <button type="submit">Register</button>
+                    <p>Already have an account? <span id="showLoginForm">Login here</span></p>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+</header>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery Library -->
+<script src="../script/script.js"></script>
+<script src="../script/login.js"></script>
+

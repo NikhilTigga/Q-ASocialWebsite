@@ -1,0 +1,301 @@
+.background {
+    position: relative;
+    overflow: hidden;
+    /* Prevents overflow */
+    width: 100%;
+    /* Full width */
+    height: 50vh;
+    /* Full viewport height */
+}
+
+.video-background {
+    position: absolute;
+    /* Positioning it absolutely within the background */
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    min-width: 100%;
+    /* Minimum width */
+    min-height: 100%;
+    /* Minimum height */
+    width: auto;
+    /* Auto width */
+    height: auto;
+    /* Auto height */
+    z-index: -1;
+    /* Send it to the back */
+    transform: translate(-50%, -50%);
+    /* Centering */
+}
+
+.posts {
+
+    justify-content: center;
+    border-radius: 10px;
+
+    width: 50%;
+    background-color:  #f9f9f9;
+    /* Semi-transparent white background */
+    padding: 20px;
+    /* Padding inside each post */
+    margin: 0 auto 20px;
+    /* 0 for top/bottom, auto for left/right */
+    /* Space between posts */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+
+}
+
+.title h1 {
+    font-size: 1.5em;
+    /* Larger font size for the title */
+    margin-bottom: 10px;
+    /* Space below the title */
+    color: #333;
+    /* Darker text color */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1em;
+    /* Standard font size for the description */
+    color: #333232;
+    /* Slightly lighter color for text */
+    margin-bottom: 20px;
+    /* Space below the description */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon-item i {
+    margin-right: 5px;
+}
+
+
+
+
+
+.readans {
+    border-radius: 10px;
+    display: flex;
+    background-color: #04AA6D;
+    justify-content: center;
+}
+
+.readans button {
+    background-color: transparent;
+    /* Fully transparent background */
+    border: none;
+    /* No border */
+    color: #000;
+    /* Button text color */
+    padding: 1px 20px;
+    /* Button padding */
+    cursor: pointer;
+    /* Pointer cursor to indicate interactivity */
+    font-size: 16px;
+    /* Adjust font size if needed */
+    transition: color 0.3s ease;
+    /* Smooth transition on hover */
+}
+
+.readans button:hover {
+    color: #007bff;
+    /* Change text color on hover */
+}
+
+/* Style the navigation bar */
+.navbar {
+    position: relative;
+    /* Ensure navbar is above the video */
+    z-index: 1;
+    /* Bring navbar in front of the video */
+
+    /* Add other styles for the navbar as needed */
+}
+
+
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+
+    transform: translate3d(5px, 0, 0) scale3d(1.05, 1.05, 1) rotateZ(3deg);
+}
+
+/* Adding vendor prefixes for broader compatibility */
+
+
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    
+}
+.profile-section img{
+    border: 2px solid black;
+}
+
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info h4 {
+margin: 0;
+font-size: 16px;
+color: black;
+font-family: "Roboto", sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 21px;
+font-weight: bold;
+}
+
+.user-info .post-date {
+    margin: 0;
+    font-size: 12px;
+    color: grey;
+}
+
+
+/* Modal container */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black with opacity */
+}
+
+.modal textarea {
+    height: 150px;
+    resize: vertical;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.user-name {
+    font-weight: bold;
+    margin: 0;
+}
+
+.answer-date {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.answer-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.mainContent {
+    background-image: url("../images/Untitled design (1).jpg");
+    background-size: cover;
+    /* Ensures the image covers the entire container */
+    background-position: center;
+    /* Keeps the image centered */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    background-attachment: scroll;
+    /* Fixes the background for parallax */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Adds a subtle shadow effect */
+    border-radius: 10px;
+    /* Optional: Rounds the corners */
+    overflow: hidden;
+    /* Ensures child content respects the border radius */
+    min-height: 100vh;
+    /* Adjusts height to show the effect properly */
+}
+
+
+.allposts {
+    margin-top: 40px;
+    max-height: 35em; /* Adjust the height as needed */
+    overflow-y: auto; /* Enables vertical scroll if content exceeds max height */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
